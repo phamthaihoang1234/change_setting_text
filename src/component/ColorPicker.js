@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 
 class ColorPicker extends Component{
     constructor(props) {
-
         super(props);
         this.state = {
             colors : ['red', 'green','blue','#ccc']
@@ -11,13 +10,13 @@ class ColorPicker extends Component{
     }
     showColor(color){
         return {
-            backgroundColor : color
+            backgroundColor : color // sử dụng atribute trong reactjs để hiển thị màu
         };
     }
 
     setActiveColor(color){
         // trả giá trị color cho thầng cha
-        // dùng props để gửi dữ liệu cho thằng cha
+        // dùng props để gửi dữ liệu cho thằng cha thông qua function
         this.props.onReceiveColor(color);
     }
 

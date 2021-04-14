@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 class Reset extends Component{
 
     onResetDefault = () =>{
-        // thăng cha truyền cho nó cái props
+
         this.props.onSettingDefault(true);
     }
     render() {

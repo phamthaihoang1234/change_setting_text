@@ -19,6 +19,7 @@ class App extends Component{
         this.setState({
             color: params
         })
+
     }
     onChangeSize = (value) =>{
         if(this.state.fontsize + value >=8 && this.state.fontsize + value <=36 ){
@@ -42,10 +43,11 @@ class App extends Component{
     return (
         <div className="container-mt-50">
           <div className="row">
-            <ColorPicker color = {this.state.color} onReceiveColor={this.onSetColor} />
+              // ta sẽ gửi dữ liệu từ con sang cha thông qua thằng props onReceiveColor và sau đó truyền cho hàm onSetColor
+              <ColorPicker color = {this.state.color} onReceiveColor={this.onSetColor} />
 
             <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-              <SizeSetting fontSize={this.state.fontsize} onChangeSize={this.onChangeSize}/>
+                <SizeSetting fontSize={this.state.fontsize} onChangeSize={this.onChangeSize}/>
               <Reset onSettingDefault={this.onSettingDefault}/>
             </div>
             <Result color={this.state.color} fontSize={this.state.fontsize}/>
